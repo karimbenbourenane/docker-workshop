@@ -1,6 +1,6 @@
-# What's all this fuzz about Docker?
+# What's all this fuss about Docker?
 
-> These are the notes or the Docker Workshop I have given at DjangoCon Budapest 2016. Please note that those are still a bit rough, but I'll try to polish them over the next few days.. Follow me at [@AskChive](https://twitter.com/AskChive) to be notified of updates :)
+> These are the notes or the Docker Workshop at EuroPython 2016 in Bilboa, Spain.
 
 
 ## Running commands
@@ -44,7 +44,7 @@ $ docker rm <names/ids>
 ```shell
 $ docker run --rm <image> <command>
 ```
- 
+
 ## Dockerfile
 
 create new project
@@ -101,7 +101,7 @@ EXPOSE 80
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-    
+
 CMD python manage.py runserver 0.0.0.0:80
 ```
 Next we have to remove the ``working_dir``, ``image`` and ``command`` directives from the docker-compose.yml file since they're now defined in the Dockerfile.
