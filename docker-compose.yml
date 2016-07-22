@@ -1,26 +1,18 @@
 version: "2"
 
-volumes:
-  db:
-    driver: local
-
 services:
   web:
     build: .
     volumes:
       - ".:/app"
+    depends_on:
+      - db
+      - redis
     environment:
+      SECRET_KEY: "this is super secret asldkjflasdf"
       DATABASE_URL: postgres://web:secretpassword@db:5432/web
       CACHE_URL: redis://redis:6379
-      SECRET_KEY: notsosecret
-  lb:
-    image: dockercloud/haproxy
-    links:
-      - web
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    ports:
-      - "80:80"
+
   db:
     image: postgres:9.4
     volumes:
@@ -28,5 +20,25 @@ services:
     environment:
       POSTGRES_USER: web
       POSTGRES_PASSWORD: secretpassword
+
   redis:
-    image: redis
+    image: redis:3.2
+    expose:
+      - "6379"
+
+  lb:
+    image: dockercloud/haproxy:1.5.2
+    links:
+      - web
+    environment:
+      - DOCKER_TLS_VERIFY
+      - DOCKER_HOST
+      - DOCKER_CERT_PATH
+    volumes:
+      - $DOCKER_CERT_PATH:$DOCKER_CERT_PATH
+    ports:
+      - 80:80
+
+volumes:
+  db:
+    driver: local
