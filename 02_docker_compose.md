@@ -1,6 +1,7 @@
 ## docker-compose.yml
 
-docker commands and arguments are hard to remember. docker-compose saves the day!
+docker commands and arguments are hard to remember. docker-compose saves
+the day!
 
 Create a file called ``docker-compose.yml``:
 
@@ -17,7 +18,8 @@ services:
       - ".:/app"
 ```
 
-Now, instead of remembering all that complicated stuff, we can just use docker-compose to do the same thing:
+Now, instead of remembering all that complicated stuff, we can just use
+docker-compose to do the same thing:
 
 ```bash
 $ docker-compose up
@@ -37,3 +39,4 @@ $ docker-compose run --rm web python manage.py createsuperuser
 user root
 pw rootrooot
 ```
+

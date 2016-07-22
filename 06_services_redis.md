@@ -69,8 +69,7 @@ urlpatterns = [
 ]
 ```
 
-create the folder ``/templates``
-create ``/templates/index.html``
+create the folder ``/templates`` create ``/templates/index.html``
 
 ```html
 hello my friend. Your number is <strong>{{ counter }}</strong> and this request has been served by host <pre>{{ hostname }}</pre>.
@@ -91,3 +90,4 @@ Restart and check if it works:
 $ docker-compose build web
 $ docker-compose up --force-recreate web
 ```
+

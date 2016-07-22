@@ -1,4 +1,5 @@
 ## Running commands
+
 ### one-off commands
 
 ```shell
@@ -26,7 +27,8 @@ $ docker run -it busybox
 $ docker ps -a
 ```
 
-**Explanation:** each "docker run" runs the specified command in a new container (isolated environment)
+**Explanation:** each "docker run" runs the specified command in a new
+container (isolated environment)
 
 ### Cleaning up:
 
@@ -54,5 +56,6 @@ start your project
 $ docker run --rm -v "$PWD":/app -w /app -p 80:80 django:1.9.8 python manage.py runserver 0.0.0.0:80
 ```
 
-Load the website in a browser at http://192.168.99.100 (with docker toolbox) or http://127.0.0.1 with Linux.
-You should see the default Django success page.
+Load the website in a browser at http://192.168.99.100 (with docker
+toolbox) or http://127.0.0.1 with Linux. You should see the default
+Django success page.
