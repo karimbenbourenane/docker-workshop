@@ -5,8 +5,8 @@
 - [Custom ``Dockerfile``](03_Dockerfile.md)
 - [Environment variables](04_environment.md)
 - [Multiple services](05_multiple_services.md)
-- [Services: redis](06_services_redis.md)
-- [Services: loadbalancer](07_services_loadbalancer.md)
+    - [Services: redis](06_services_redis.md)
+    - [Services: loadbalancer](07_services_loadbalancer.md)
 
 
 # other topics
